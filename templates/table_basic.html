@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蒙牛</title>
+    <link rel="stylesheet" href="../static/assets/css/amazeui.css"/>
+    <link rel="stylesheet" href="../static/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/assets/css/core.css"/>
+    <link rel="stylesheet" href="../static/assets/css/menu.css"/>
+    <link rel="stylesheet" href="../static/assets/css/index.css"/>
+    <link rel="stylesheet" href="../static/assets/css/admin.css"/>
+    <link rel="stylesheet" href="../static/assets/css/page/typography.css"/>
+    <link rel="stylesheet" href="../static/assets/css/page/form.css"/>
+</head>
+<body>
+<!-- Begin page -->
+<header class="am-topbar am-topbar-fixed-top">
+    <div class="am-topbar-left am-hide-sm-only">
+        <a href="/upload/" class="logo"><span>蒙<span>牛</span></span><i class="zmdi zmdi-layers"></i></a>
+    </div>
+
+    <div class="contain">
+        <ul class="am-nav am-navbar-nav am-navbar-left">
+
+            <li><h4 class="page-title">原始含量</h4></li>
+        </ul>
+    </div>
+</header>
+<!-- end page -->
+
+
+<div class="admin">
+    <!--<div class="am-g">-->
+    <!-- ========== Left Sidebar Start ========== -->
+    <!--<div class="left side-menu am-hide-sm-only am-u-md-1 am-padding-0">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 548px;">
+            <div class="sidebar-inner slimscrollleft" style="overflow: hidden; width: auto; height: 548px;">-->
+    <!-- sidebar start -->
+    <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+        <div class="am-offcanvas-bar admin-offcanvas-bar">
+            <!-- User -->
+            <div class="user-box am-hide-sm-only">
+                <div class="user-img">
+                    <img src="../static/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme"
+                         class="img-circle img-thumbnail img-responsive">
+                    <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+                </div>
+                <h5><a href="#">{{ uname }}</a></h5>
+                <ul class="list-inline">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text-custom">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End User -->
+
+            <ul class="am-list admin-sidebar-list">
+                <li><a href="/upload/"><span class="am-icon-home"></span>文件上传</a></li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span>
+                        描述性统计 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+                        <li><a href="/yuanshi/" class="am-cf"> 母乳原始数据</a></li>
+                        <li><a href="/xiangdui/">母乳相对数据</a></li>
+                        <li><a href="/nfyuanshi/" class="am-cf"> 奶粉原始数据</a></li>
+                        <li><a href="/nfxiangdui/">奶粉相对数据</a></li>
+                    </ul>
+                </li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><i class="am-icon-line-chart"
+                                                                                      aria-hidden="true"></i> 数据分析 <span
+                            class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+                        <li><a href="/charts/" class="am-cf">箱型图图和小提琴图</a></li>
+                        <li><a href="/PCA_MDS/" class="am-cf">MDS和PCA</a></li>
+                        <li><a href="/mama/" class="am-cf">母乳评价</a></li>
+                        <li><a href="/searchdis/" class="am-cf">奶粉评价</a></li>
+
+
+                    </ul>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!--</div>
+</div>
+</div>-->
+    <!-- ========== Left Sidebar end ========== -->
+
+
+    <!--	<div class="am-g">-->
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <div class="card-box">
+
+                <div class="am-g">
+                    <div class="am-u-sm-12" style="overflow: scroll">
+                        <form class="am-form">
+                            {% if temp == 'mr' %}
+                                <table class="am-table am-table-striped am-table-hover table-main">
+                                    <thead>
+                                    <th>初乳</th>
+                                    <th>赖氨酸</th>
+                                    <th>苏氨酸</th>
+                                    <th>缬氨酸</th>
+                                    <th>蛋氨酸</th>
+                                    <th>异亮氨酸</th>
+                                    <th>亮氨酸</th>
+                                    <th>苯丙氨酸</th>
+                                    <th>色氨酸</th>
+                                    <th>组氨酸</th>
+                                    <th>天冬氨酸</th>
+                                    <th>丝氨酸</th>
+                                    <th>谷氨酸</th>
+                                    <th>甘氨酸</th>
+                                    <th>丙氨酸</th>
+                                    <th>酪氨酸</th>
+                                    <th>精氨酸</th>
+                                    <th>脯氨酸</th>
+                                    <th>半胱氨酸</th>
+                                    <th>总氨基酸</th>
+                                    <th>必须氨基酸</th>
+                                    <th>非必须氨基酸</th>
+                                    <th>必须/非必须</th>
+                                    <th>必须/总</th>
+                                    <th>非必须/总</th>
+                                    </thead>
+                                    <tbody>
+                                    {% for index,row_value in YS1.iterrows %}
+                                        <tr>
+                                            <td>{{ index }}</td>
+                                            {% for value in row_value %}
+                                                <td>{{ value }}</td>
+                                            {% endfor %}
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <table class="am-table am-table-striped am-table-hover table-main">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>总蛋白</th>
+                                        <th>赖氨酸</th>
+                                        <th>苏氨酸</th>
+                                        <th>缬氨酸</th>
+                                        <th>蛋氨酸</th>
+                                        <th>异亮氨酸</th>
+                                        <th>亮氨酸</th>
+                                        <th>苯丙氨酸</th>
+                                        <th>色氨酸</th>
+                                        <th>组氨酸</th>
+                                        <th>天冬氨酸</th>
+                                        <th>丝氨酸</th>
+                                        <th>谷氨酸</th>
+                                        <th>甘氨酸</th>
+                                        <th>丙氨酸</th>
+                                        <th>酪氨酸</th>
+                                        <th>精氨酸</th>
+                                        <th>脯氨酸</th>
+                                        <th>半胱氨酸</th>
+                                        <th>总氨基酸</th>
+                                        <th>必须氨基酸</th>
+                                        <th>非必须氨基酸</th>
+                                        <th>必须/非必须</th>
+                                        <th>必须/总</th>
+                                        <th>非必须/总</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for index,row_value in YS.iterrows %}
+                                        <tr>
+                                            <td>{{ index }}</td>
+                                            {% for value in row_value %}
+                                                <td>{{ value }}</td>
+                                            {% endfor %}
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% endif %}
+                            <hr/>
+                            {% if temp == 'mr' %}
+                                <form class="am-form" method="post" action="/yuanshi/" enctype="multipart/form-data">
+                            {% else %}
+                                <form class="am-form" method="post" action="/nfyuanshi/" enctype="multipart/form-data">
+                            {% endif %}
+                            {% csrf_token %}
+                            <input type="hidden" name="type" value="{{ temp }}">
+                            <input type="hidden" name="miruqi" value="1">
+                            <button type="submit" name="downdata" class="am-btn am-btn-primary">下载表格</button>
+                        </form>
+                            {% if messages %}
+                                <script>
+                                    {% for msg in messages %}
+                                        alert('{{ msg.message }}');
+                                    {% endfor %}
+                                </script>
+                            {% endif %}
+
+
+                    </div>
+
+                </div>
+                <!-- Row end -->
+
+            </div>
+            {% if temp == 'mr' %}
+            <div class="card-box">
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-btn-toolbar">
+
+                        </div>
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-3">
+
+                    </div>
+                </div>
+                <!-- Row end -->
+
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12" style="overflow: scroll">
+                        <form class="am-form">
+
+
+                            <table class="am-table am-table-striped am-table-hover table-main">
+                                <thead>
+                                <th>过渡乳</th>
+                                <th>赖氨酸</th>
+                                <th>苏氨酸</th>
+                                <th>缬氨酸</th>
+                                <th>蛋氨酸</th>
+                                <th>异亮氨酸</th>
+                                <th>亮氨酸</th>
+                                <th>苯丙氨酸</th>
+                                <th>色氨酸</th>
+                                <th>组氨酸</th>
+                                <th>天冬氨酸</th>
+                                <th>丝氨酸</th>
+                                <th>谷氨酸</th>
+                                <th>甘氨酸</th>
+                                <th>丙氨酸</th>
+                                <th>酪氨酸</th>
+                                <th>精氨酸</th>
+                                <th>脯氨酸</th>
+                                <th>半胱氨酸</th>
+                                <th>总氨基酸</th>
+                                <th>必须氨基酸</th>
+                                <th>非必须氨基酸</th>
+                                <th>必须/非必须</th>
+                                <th>必须/总</th>
+                                <th>非必须/总</th>
+                                </thead>
+                                <tbody>
+                                {% for index,row_value in YS2.iterrows %}
+                                    <tr>
+                                        <td>{{ index }}</td>
+                                        {% for value in row_value %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+
+                            <hr/>
+
+                            <form class="am-form" method="post" action="/yuanshi/" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="type" value="{{ temp }}">
+                                <input type="hidden" name="miruqi" value="2">
+                                <button type="submit" name="downdata" class="am-btn am-btn-primary">下载表格</button>
+                            </form>
+
+
+                            {% if messages %}
+                                <script>
+                                    {% for msg in messages %}
+                                        alert('{{ msg.message }}');
+                                    {% endfor %}
+                                </script>
+                            {% endif %}
+                        </form>
+                    </div>
+
+                </div>
+                <!-- Row end -->
+
+            </div>
+            <div class="card-box">
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-btn-toolbar">
+
+                        </div>
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-3">
+
+                    </div>
+                </div>
+                <!-- Row end -->
+
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12" style="overflow: scroll">
+                        <form class="am-form">
+
+
+                            <table class="am-table am-table-striped am-table-hover table-main">
+                                <thead>
+                                <th>早期成熟乳</th>
+                                <th>赖氨酸</th>
+                                <th>苏氨酸</th>
+                                <th>缬氨酸</th>
+                                <th>蛋氨酸</th>
+                                <th>异亮氨酸</th>
+                                <th>亮氨酸</th>
+                                <th>苯丙氨酸</th>
+                                <th>色氨酸</th>
+                                <th>组氨酸</th>
+                                <th>天冬氨酸</th>
+                                <th>丝氨酸</th>
+                                <th>谷氨酸</th>
+                                <th>甘氨酸</th>
+                                <th>丙氨酸</th>
+                                <th>酪氨酸</th>
+                                <th>精氨酸</th>
+                                <th>脯氨酸</th>
+                                <th>半胱氨酸</th>
+                                <th>总氨基酸</th>
+                                <th>必须氨基酸</th>
+                                <th>非必须氨基酸</th>
+                                <th>必须/非必须</th>
+                                <th>必须/总</th>
+                                <th>非必须/总</th>
+                                </thead>
+                                <tbody>
+                                {% for index,row_value in YS3.iterrows %}
+                                    <tr>
+                                        <td>{{ index }}</td>
+                                        {% for value in row_value %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <hr/>
+
+                            <form class="am-form" method="post" action="/yuanshi/" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="type" value="{{ temp }}">
+                                <input type="hidden" name="miruqi" value="3">
+                                <button type="submit" name="downdata" class="am-btn am-btn-primary">下载表格</button>
+                            </form>
+
+
+                            {% if messages %}
+                                <script>
+                                    {% for msg in messages %}
+                                        alert('{{ msg.message }}');
+                                    {% endfor %}
+                                </script>
+                            {% endif %}
+                        </form>
+                    </div>
+
+                </div>
+                <!-- Row end -->
+
+            </div>
+            <div class="card-box">
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-btn-toolbar">
+
+                        </div>
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-3">
+
+                    </div>
+                </div>
+                <!-- Row end -->
+
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12" style="overflow: scroll">
+                        <form class="am-form">
+
+
+                            <table class="am-table am-table-striped am-table-hover table-main">
+                                <thead>
+                                <th>晚期成熟乳</th>
+                                <th>赖氨酸</th>
+                                <th>苏氨酸</th>
+                                <th>缬氨酸</th>
+                                <th>蛋氨酸</th>
+                                <th>异亮氨酸</th>
+                                <th>亮氨酸</th>
+                                <th>苯丙氨酸</th>
+                                <th>色氨酸</th>
+                                <th>组氨酸</th>
+                                <th>天冬氨酸</th>
+                                <th>丝氨酸</th>
+                                <th>谷氨酸</th>
+                                <th>甘氨酸</th>
+                                <th>丙氨酸</th>
+                                <th>酪氨酸</th>
+                                <th>精氨酸</th>
+                                <th>脯氨酸</th>
+                                <th>半胱氨酸</th>
+                                <th>总氨基酸</th>
+                                <th>必须氨基酸</th>
+                                <th>非必须氨基酸</th>
+                                <th>必须/非必须</th>
+                                <th>必须/总</th>
+                                <th>非必须/总</th>
+                                </thead>
+                                <tbody>
+                                {% for index,row_value in YS4.iterrows %}
+                                    <tr>
+                                        <td>{{ index }}</td>
+                                        {% for value in row_value %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <hr/>
+
+                            <form class="am-form" method="post" action="/yuanshi/" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="miruqi" value="4">
+                                <button type="submit" name="downdata" class="am-btn am-btn-primary">下载表格</button>
+                            </form>
+
+
+                            {% if messages %}
+                                <script>
+                                    {% for msg in messages %}
+                                        alert('{{ msg.message }}');
+                                    {% endfor %}
+                                </script>
+                            {% endif %}
+                        </form>
+                    </div>
+
+                </div>
+                <!-- Row end -->
+
+            </div>
+            {% endif %}
+
+        </div>
+
+
+    </div>
+</div>
+<!-- end right Content here -->
+<!--</div>-->
+</div>
+</div>
+
+<!-- navbar -->
+<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu"
+   data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+
+<script type="text/javascript" src="../static/assets/js/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="../static/assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/app.js"></script>
+<script type="text/javascript" src="../static/assets/js/blockUI.js"></script>
+</body>
+
+</html>

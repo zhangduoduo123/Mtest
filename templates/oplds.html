@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蒙牛</title>
+    <script type="text/javascript" language="javascript">
+
+    function selType(show) {
+
+        if (show == 'b'){
+            document.getElementById("pro").style.display = "inline-block";
+            document.getElementById("table1").style.display = "inline";
+}
+        if (show == 'a'){
+            document.getElementById("table1").style.display = "none";
+            document.getElementById("pro").style.display = "inline-block";
+
+}
+        if (show == 'pro'){
+            document.getElementById("pro").style.display = "none";
+            document.getElementById("table1").style.display = "none";
+   }
+
+
+    }
+   </script>
+
+    <link rel="stylesheet" href="../static/assets/css/amazeui.css"/>
+    <link rel="stylesheet" href="../static/assets/css/core.css"/>
+    <link rel="stylesheet" href="../static/assets/css/menu.css"/>
+    <link rel="stylesheet" href="../static/assets/css/index.css"/>
+    <link rel="stylesheet" href="../static/assets/css/admin.css"/>
+    <link rel="stylesheet" href="../static/assets/css/page/typography.css"/>
+    <link rel="stylesheet" href="../static/assets/css/page/form.css"/>
+    <link rel="stylesheet" href="../static/assets/css/component.css"/>
+</head>
+<body>
+<!-- Begin page -->
+<header class="am-topbar am-topbar-fixed-top">
+    <div class="am-topbar-left am-hide-sm-only">
+        <a href="index.html" class="logo"><span>蒙<span>牛</span></span><i class="zmdi zmdi-layers"></i></a>
+    </div>
+
+    <div class="contain">
+        <ul class="am-nav am-navbar-nav am-navbar-left">
+
+            <li><h4 class="page-title">母乳评价-距离计算</h4></li>
+        </ul>
+    </div>
+</header>
+<!-- end page -->
+
+
+<div class="admin">
+    <!--<div class="am-g">-->
+    <!-- ========== Left Sidebar Start ========== -->
+    <!--<div class="left side-menu am-hide-sm-only am-u-md-1 am-padding-0">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 548px;">
+            <div class="sidebar-inner slimscrollleft" style="overflow: hidden; width: auto; height: 548px;">-->
+    <!-- sidebar start -->
+    <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+        <div class="am-offcanvas-bar admin-offcanvas-bar">
+            <!-- User -->
+            <div class="user-box am-hide-sm-only">
+                <div class="user-img">
+                    <img src="../static/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme"
+                         class="img-circle img-thumbnail img-responsive">
+                    <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+                </div>
+                <h5><a href="#">{{ uname }}</a></h5>
+                <ul class="list-inline">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text-custom">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End User -->
+
+            <ul class="am-list admin-sidebar-list">
+                <li><a href="/upload/"><span class="am-icon-home"></span>文件上传</a></li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span>
+                        描述性统计 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+                        <li><a href="/yuanshi/" class="am-cf"> 母乳原始数据</a></li>
+                        <li><a href="/xiangdui/">母乳相对数据</a></li>
+                        <li><a href="/nfyuanshi/" class="am-cf"> 奶粉原始数据</a></li>
+                        <li><a href="/nfxiangdui/">奶粉相对数据</a></li>
+                    </ul>
+                </li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><i class="am-icon-line-chart"
+                                                                                      aria-hidden="true"></i> 数据分析 <span
+                            class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+                        <li><a href="/charts/" class="am-cf">箱型图图和小提琴图</a></li>
+                        <li><a href="/PCA_MDS/" class="am-cf">MDS和PCA</a></li>
+                        <li><a href="/mama/" class="am-cf">母乳评价</a></li>
+                        <li><a href="/searchdis/" class="am-cf">奶粉评价</a></li>
+<li><a href="/disnew/" class="am-cf">新模式评价</a></li>
+<li><a href="/oplds/" class="am-cf">PLS-DA</a></li>
+                    </ul>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!--</div>
+</div>
+</div>-->
+    <!-- ========== Left Sidebar end ========== -->
+
+
+    <!--	<div class="am-g">-->
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+
+        </div>
+
+        <div class="am-u-md-12">
+            <div class="card-box">
+                            <h4 class="header-title m-t-0 m-b-30"></h4>
+
+                <div class="am-scrollable-horizontal am-text-ms" style="font-family: '微软雅黑';">
+                    <div align="center">
+                 <form method="POST" name="form" enctype="multipart/form-data" action="" class="form-inline" role="form">
+                    {% csrf_token %}
+
+
+
+<br>
+      <input type="submit" value="查询"  class="btn btn-default" >
+                </form>
+            </div>
+
+<img src="../static/pic/plsda.jpg" width="1200px" height="800px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end right Content here -->
+    <!--</div>-->
+</div>
+</div>
+
+<!-- navbar -->
+<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu"
+   data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+
+<script type="text/javascript" src="../static/assets/js/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="../static/assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/app.js"></script>
+<script type="text/javascript" src="../static/assets/js/blockUI.js"></script>
+<script type="text/javascript" src="../static/assets/js/charts/echarts.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/charts/indexChart.js"></script>
+
+</body>
+
+</html>
